@@ -7,12 +7,19 @@ function start() { // Inicio da função start()
 	$("#fundoGame").append("<div id='inimigo2'></div>");
 	$("#fundoGame").append("<div id='amigo' class='anima3'></div>");
     //Esse código a cima cria as divs adicionando um "caminho"
-} // Fim da função start
+
 
 //Principais variáveis do jogo
 	
 var jogo = {}
-	
+var TECLA = {
+	W: 87,
+	S: 83,
+	D: 68
+	}
+
+	jogo.pressionou = [];	
+
 //Game Loop
 
 jogo.timer = setInterval(loop,30); //30s setInterval é temporizador
@@ -23,5 +30,14 @@ movefundo();
 
 } // Fim da função loop()
 
+//Função que movimenta o fundo do jogo
+	
+function movefundo() {
+	
+	esquerda = parseInt($("#fundoGame").css("background-position"));
+	$("#fundoGame").css("background-position",esquerda-1); //anda 1px para a esquerda
+	
+	} // fim da função movefundo()
+ //parseInt convertendo string em número
 
-
+} // Fim da função start
