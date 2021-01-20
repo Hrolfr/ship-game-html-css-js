@@ -48,12 +48,24 @@ function movejogador() {
 		var topo = parseInt($("#jogador").css("top"));
 		$("#jogador").css("top",topo-10); //topo-10 a nave irá 10 unidades pra cima
 	
+		if (topo<=0) { //menor igual a 0,ele soma
+		
+			$("#jogador").css("top",topo+10);
+		}
+
 	}
 	
 	if (jogo.pressionou[TECLA.S]) {
 		
 		var topo = parseInt($("#jogador").css("top"));
 		$("#jogador").css("top",topo+10);//topo+10 a nave irá 10 unidades pra baixo
+	
+		if (topo>=434) {	//se tiver o valor maior igual a 434 ele subtrai
+			$("#jogador").css("top",topo-10);
+				
+		}
+		
+
 	}
 	
 	if (jogo.pressionou[TECLA.D]) {
