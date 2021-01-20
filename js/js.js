@@ -18,7 +18,20 @@ var TECLA = {
 	D: 68
 	}
 
-	jogo.pressionou = [];	
+	jogo.pressionou = []; //valor decimal das teclas	
+
+
+	//Verifica se o usuário pressionou alguma tecla	
+	
+	$(document).keydown(function(e){
+		jogo.pressionou[e.which] = true;
+		});
+	
+	
+		$(document).keyup(function(e){
+		   jogo.pressionou[e.which] = false;
+		});
+		//keydown identifica que o user pressionou uma tecla
 
 //Game Loop
 
