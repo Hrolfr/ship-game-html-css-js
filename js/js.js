@@ -9,3 +9,19 @@ function start() { // Inicio da função start()
     //Esse código a cima cria as divs adicionando um "caminho"
 } // Fim da função start
 
+//Principais variáveis do jogo
+	
+var jogo = {}
+	
+//Game Loop
+
+jogo.timer = setInterval(loop,30); //30s setInterval é temporizador
+
+function loop() {
+
+movefundo();
+
+} // Fim da função loop()
+
+
+
