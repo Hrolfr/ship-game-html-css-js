@@ -31,7 +31,7 @@ var TECLA = {
 		$(document).keyup(function(e){
 		   jogo.pressionou[e.which] = false;
 		});
-		//keydown identifica que o user pressionou uma tecla
+		//keydown identifica que o user pressionou uma tecla keyup se não pressionou
 
 //Game Loop
 
@@ -40,6 +40,28 @@ jogo.timer = setInterval(loop,30); //30s setInterval é temporizador
 function loop() {
 
 movefundo();
+movejogador();
+
+function movejogador() {
+	
+	if (jogo.pressionou[TECLA.W]) {
+		var topo = parseInt($("#jogador").css("top"));
+		$("#jogador").css("top",topo-10); //topo-10 a nave irá 10 unidades pra cima
+	
+	}
+	
+	if (jogo.pressionou[TECLA.S]) {
+		
+		var topo = parseInt($("#jogador").css("top"));
+		$("#jogador").css("top",topo+10);//topo+10 a nave irá 10 unidades pra baixo
+	}
+	
+	if (jogo.pressionou[TECLA.D]) {
+		
+		//Chama função Disparo	
+	}
+
+	} // fim da função movejogador()
 
 } // Fim da função loop()
 
