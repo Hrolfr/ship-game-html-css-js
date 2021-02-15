@@ -153,6 +153,7 @@ function disparo() {
 } // Fecha disparo()
 
 
+
 } // Fim da função loop()
 
 //Função que movimenta o fundo do jogo
