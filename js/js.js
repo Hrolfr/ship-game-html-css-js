@@ -44,6 +44,7 @@ function loop() {
 movefundo();
 movejogador();
 moveinimigo1();
+moveinimigo2();
 
 function movejogador() {
 	
@@ -84,7 +85,7 @@ function movejogador() {
 		$("#inimigo1").css("left",posicaoX-velocidade);
 		$("#inimigo1").css("top",posicaoY);
 			
-			if (posicaoX<=0) {
+			if (posicaoX<=0) { //menor igual a 0
 			posicaoY = parseInt(Math.random() * 334);
 			$("#inimigo1").css("left",694);
 			$("#inimigo1").css("top",posicaoY);
@@ -92,7 +93,17 @@ function movejogador() {
 			}
 	} //Fim da função moveinimigo1()
 	
-	
+	function moveinimigo2() {
+        posicaoX = parseInt($("#inimigo2").css("left"));
+	$("#inimigo2").css("left",posicaoX-3);
+				
+		if (posicaoX<=0) {
+			
+		$("#inimigo2").css("left",775);
+					
+		}
+} // Fim da função moveinimigo2()
+
 
 } // Fim da função loop()
 
