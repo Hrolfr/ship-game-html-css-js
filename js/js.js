@@ -11,6 +11,7 @@ function start() { // Inicio da função start()
 
 //Principais variáveis do jogo
 var podeAtirar=true;
+var fimdejogo=false;
 var jogo = {}
 var velocidade=5;
 var posicaoY = parseInt(Math.random() * 334);
@@ -155,6 +156,11 @@ function disparo() {
 
 function colisao() {
 	var colisao1 = ($("#jogador").collision($("#inimigo1")));
+	var colisao2 = ($("#jogador").collision($("#inimigo2")));
+var colisao3 = ($("#disparo").collision($("#inimigo1")));
+var colisao4 = ($("#disparo").collision($("#inimigo2")));
+var colisao5 = ($("#jogador").collision($("#amigo")));
+var colisao6 = ($("#inimigo2").collision($("#amigo")));
 	// jogador com o inimigo1
 		
 		if (colisao1.length>0) {
