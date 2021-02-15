@@ -10,7 +10,7 @@ function start() { // Inicio da função start()
 
 
 //Principais variáveis do jogo
-	
+var podeAtirar=true;
 var jogo = {}
 var velocidade=5;
 var posicaoY = parseInt(Math.random() * 334);
