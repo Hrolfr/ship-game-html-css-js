@@ -174,6 +174,21 @@ var colisao6 = ($("#inimigo2").collision($("#amigo")));
 		$("#inimigo1").css("top",posicaoY);
 		}
 	
+// jogador com o inimigo2 
+if (colisao2.length>0) {
+	
+	inimigo2X = parseInt($("#inimigo2").css("left"));
+	inimigo2Y = parseInt($("#inimigo2").css("top"));
+	explosao2(inimigo2X,inimigo2Y);
+			
+	$("#inimigo2").remove();
+		
+	reposicionaInimigo2();
+		
+	}	
+
+
+
 	} //Fim da função colisao()
 
 //Explosão 1
