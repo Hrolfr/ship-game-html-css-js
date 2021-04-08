@@ -196,7 +196,7 @@ if (colisao3.length>0) {
 	inimigo1Y = parseInt($("#inimigo1").css("top"));
 		
 	explosao1(inimigo1X,inimigo1Y);
-	$("#disparo").css("left",950);
+	$("#disparo").css("left",950); //reposicionando o disparo pra ele não caminhar na tela;
 		
 	posicaoY = parseInt(Math.random() * 334);
 	$("#inimigo1").css("left",694);
