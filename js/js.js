@@ -203,10 +203,26 @@ if (colisao3.length>0) {
 	$("#inimigo1").css("top",posicaoY);
 		
 	}
+	} 
+	
+	// Disparo com o inimigo2
+		
+	if (colisao4.length>0) {
+		
+		inimigo2X = parseInt($("#inimigo2").css("left"));
+		inimigo2Y = parseInt($("#inimigo2").css("top"));
+		$("#inimigo2").remove();
+	
+		explosao2(inimigo2X,inimigo2Y);
+		$("#disparo").css("left",950);
+		
+		reposicionaInimigo2();
+			
+		}
+     // pegando as posições do inimigo 2 e removendo da tela,chamando a explosão 2 e chamando a função reposiciona o inimigo 2.
+	 //reposicionando o disparo fora da tela para que ele seja exclu´ddo
 
-
-
-	} //Fim da função colisao()
+	//Fim da função colisao()
 
 //Explosão 1
 function explosao1(inimigo1X,inimigo1Y) {
