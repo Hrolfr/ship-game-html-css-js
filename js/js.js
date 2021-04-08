@@ -228,9 +228,34 @@ function explosao1(inimigo1X,inimigo1Y) {
 			
 			}
 			
-		}	
+		}	//porém so acontece se o fim de jogo for false pq se o jogo acabou,ele não vai recriar o inimigo 2.
 	}	
+// faz com que o inimigo 2 seja reposicionado  e a animação recomeçada após 5s 
+//setInterval função de tempo
 
+//Explosão2
+	
+function explosao2(inimigo2X,inimigo2Y) {
+	
+	$("#fundoGame").append("<div id='explosao2'></div");
+	$("#explosao2").css("background-image", "url(imgs/explosao.png)");
+	var div2=$("#explosao2");
+	div2.css("top", inimigo2Y);
+	div2.css("left", inimigo2X);
+	div2.animate({width:200, opacity:0}, "slow");
+	
+	var tempoExplosao2=window.setInterval(removeExplosao2, 1000);
+	
+		function removeExplosao2() {
+			
+			div2.remove();
+			window.clearInterval(tempoExplosao2);
+			tempoExplosao2=null;
+			
+		}
+		
+		
+	} // Fim da função explosao2()
 
 
 
