@@ -11,7 +11,7 @@ function start() { // Inicio da função start()
 
 //Principais variáveis do jogo
 var podeAtirar=true;
-var fimdejogo=false;
+var fimdejogo=false; // vai identificar se o jogo finalizou ou não,evitando que objetos sejam recriados quando o jogo estiver finalizado.
 var jogo = {}
 var velocidade=5;
 var posicaoY = parseInt(Math.random() * 334);
@@ -211,6 +211,27 @@ function explosao1(inimigo1X,inimigo1Y) {
 		}
 		
 	} // Fim da função explosao1()
+
+	//Reposiciona Inimigo2
+	
+	function reposicionaInimigo2() {
+	
+	var tempoColisao4=window.setInterval(reposiciona4, 5000);
+		
+		function reposiciona4() {
+		window.clearInterval(tempoColisao4);
+		tempoColisao4=null;
+			
+			if (fimdejogo==false) {
+			
+			$("#fundoGame").append("<div id=inimigo2></div");
+			
+			}
+			
+		}	
+	}	
+
+
 
 
 } // Fim da função loop()
