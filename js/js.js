@@ -222,6 +222,14 @@ if (colisao3.length>0) {
      // pegando as posições do inimigo 2 e removendo da tela,chamando a explosão 2 e chamando a função reposiciona o inimigo 2.
 	 //reposicionando o disparo fora da tela para que ele seja exclu´ddo
 
+  // jogador com o amigo
+		
+	if (colisao5.length>0) {
+		
+		reposicionaAmigo();
+		$("#amigo").remove();
+		}
+
 	//Fim da função colisao()
 
 //Explosão 1
