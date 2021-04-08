@@ -317,6 +317,8 @@ function reposicionaAmigo() {
 		
 	}
 	
+   //vai recriar o amigo na tela se o jogo não chegou ao final e na colisão do jogador com o amigo,ele aparecerá depois de 6s.
+
 } // Fim da função reposicionaAmigo()
 
 } // Fim da função loop()
