@@ -13,6 +13,9 @@ function start() { // Inicio da função start()
 //Principais variáveis do jogo
 var podeAtirar=true;
 var fimdejogo=false; // vai identificar se o jogo finalizou ou não,evitando que objetos sejam recriados quando o jogo estiver finalizado.
+var pontos=0;
+var salvos=0;
+var perdidos=0;
 var jogo = {}
 var velocidade=5;
 var posicaoY = parseInt(Math.random() * 334);
@@ -49,6 +52,7 @@ moveinimigo1();
 moveinimigo2();
 moveamigo();
 colisao();
+placar();
 
 function movejogador() {
 	
@@ -158,10 +162,10 @@ function disparo() {
 function colisao() {
 	var colisao1 = ($("#jogador").collision($("#inimigo1")));
 	var colisao2 = ($("#jogador").collision($("#inimigo2")));
-var colisao3 = ($("#disparo").collision($("#inimigo1")));
-var colisao4 = ($("#disparo").collision($("#inimigo2")));
-var colisao5 = ($("#jogador").collision($("#amigo")));
-var colisao6 = ($("#inimigo2").collision($("#amigo")));
+    var colisao3 = ($("#disparo").collision($("#inimigo1")));
+    var colisao4 = ($("#disparo").collision($("#inimigo2")));
+    var colisao5 = ($("#jogador").collision($("#amigo")));
+    var colisao6 = ($("#inimigo2").collision($("#amigo")));
 	// jogador com o inimigo1
 		
 		if (colisao1.length>0) {
@@ -173,7 +177,7 @@ var colisao6 = ($("#inimigo2").collision($("#amigo")));
 		posicaoY = parseInt(Math.random() * 334);
 		$("#inimigo1").css("left",694);
 		$("#inimigo1").css("top",posicaoY);
-		}
+		} //Fim da função colisao()
 	
 // jogador com o inimigo2 
 if (colisao2.length>0) {
@@ -191,6 +195,7 @@ if (colisao2.length>0) {
 	//Inimigo2 com o amigo
 	if (colisao6.length>0) {
 	    
+		perdidos++;
 		amigoX = parseInt($("#amigo").css("left"));
 		amigoY = parseInt($("#amigo").css("top"));
 		explosao3(amigoX,amigoY);
@@ -203,8 +208,8 @@ if (colisao2.length>0) {
 // Disparo com o inimigo1
 		
 if (colisao3.length>0) {
-		
-		
+	
+	pontos=pontos+100;
 	inimigo1X = parseInt($("#inimigo1").css("left"));
 	inimigo1Y = parseInt($("#inimigo1").css("top"));
 		
@@ -222,6 +227,7 @@ if (colisao3.length>0) {
 		
 	if (colisao4.length>0) {
 		
+		pontos=pontos+50;
 		inimigo2X = parseInt($("#inimigo2").css("left"));
 		inimigo2Y = parseInt($("#inimigo2").css("top"));
 		$("#inimigo2").remove();
@@ -239,6 +245,7 @@ if (colisao3.length>0) {
 		
 	if (colisao5.length>0) {
 		
+		salvos++;
 		reposicionaAmigo();
 		$("#amigo").remove();
 		}
@@ -348,6 +355,15 @@ function explosao3(amigoX,amigoY) {
 	
 
    //vai recriar o amigo na tela se o jogo não chegou ao final e na colisão do jogador com o amigo,ele aparecerá depois de 6s.
+
+   function placar() {
+	
+	$("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
+	
+} //fim da função placar()
+
+
+
 
 } // Fim da função reposicionaAmigo()
 
